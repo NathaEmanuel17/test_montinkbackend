@@ -9,19 +9,8 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- jQuery (opcional se usar scripts customizados com jQuery) -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <!-- Bootstrap Bundle JS (com Popper incluído) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap Bundle JS (com Popper incluso) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Vite assets (se ainda estiver usando app.css/app.js para JS personalizados ou Bootstrap via npm) -->
-    @vite(['resources/js/app.js'])
 </head>
-<body class="bg-light text-dark">
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
 
 @include('layouts.navigation')
 
@@ -33,10 +22,11 @@
     </header>
 @endisset
 
-<main class="container py-4">
-    @yield('content')
+<main class="container py-4 flex-grow-1">
+    {{ $slot }}
 </main>
 
+@vite(['resources/js/app.js'])
 
 </body>
 </html>

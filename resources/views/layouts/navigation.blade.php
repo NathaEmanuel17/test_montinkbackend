@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="{{ route('dashboard') }}">
+        <a class="navbar-brand d-flex align-items-center" href="/">
             <img src="https://sou.montink.com/wp-content/uploads/2024/04/logo.png" alt="Logo" height="40">
         </a>
 
