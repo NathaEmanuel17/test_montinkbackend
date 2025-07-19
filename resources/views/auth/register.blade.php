@@ -1,7 +1,6 @@
-@extends('layouts.app') {{-- ou layouts.guest, se você separou --}}
+<x-app-layout>
 
-@section('content')
-    <div class="container mt-5" style="max-width: 500px;">
+<div class="container mt-5" style="max-width: 500px;">
         <h2 class="mb-4">Criar conta</h2>
 
         <form method="POST" action="{{ route('register') }}">
@@ -63,4 +62,5 @@
             </div>
         </form>
     </div>
-@endsection
+</x-app-layout>
+
