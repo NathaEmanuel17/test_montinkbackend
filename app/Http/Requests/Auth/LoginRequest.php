@@ -12,7 +12,7 @@ use Illuminate\Validation\ValidationException;
 class LoginRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine se o usuário está autorizado a fazer esta requisição.
      */
     public function authorize(): bool
     {
@@ -20,7 +20,7 @@ class LoginRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Regras de validação da requisição.
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
@@ -33,7 +33,7 @@ class LoginRequest extends FormRequest
     }
 
     /**
-     * Attempt to authenticate the request's credentials.
+     * Tenta autenticar com as credenciais fornecidas.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -45,7 +45,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => 'As credenciais fornecidas estão incorretas.',
             ]);
         }
 
@@ -53,7 +53,7 @@ class LoginRequest extends FormRequest
     }
 
     /**
-     * Ensure the login request is not rate limited.
+     * Garante que o login não foi bloqueado por excesso de tentativas.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -68,18 +68,15 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
-                'seconds' => $seconds,
-                'minutes' => ceil($seconds / 60),
-            ]),
+            'email' => 'Muitas tentativas de login. Tente novamente em ' . $seconds . ' segundos.',
         ]);
     }
 
     /**
-     * Get the rate limiting throttle key for the request.
+     * Gera a chave de limitação de tentativas com base no e-mail e IP.
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->string('email')) . '|' . $this->ip());
     }
 }
