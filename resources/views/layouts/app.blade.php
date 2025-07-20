@@ -6,11 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    @vite(['resources/js/app.js'])
 </head>
-<body class="bg-light text-dark d-flex flex-column min-vh-100">
+<body class="bg-light text-dark">
 
 @include('layouts.navigation')
 
@@ -22,11 +21,11 @@
     </header>
 @endisset
 
-<main class="container py-4 flex-grow-1">
+<main class="container py-4">
     {{ $slot }}
 </main>
 
-@vite(['resources/js/app.js'])
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
