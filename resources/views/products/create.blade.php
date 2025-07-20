@@ -6,7 +6,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin.products.store') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row">
@@ -73,7 +73,7 @@
 
             <div class="mt-4">
                 <button type="submit" class="btn btn-success">Salvar</button>
-                <a href="{{ route('products.index') }}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
