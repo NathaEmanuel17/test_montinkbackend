@@ -26,8 +26,8 @@
             @forelse ($coupons as $coupon)
                 <tr>
                     <td>{{ $coupon->code }}</td>
-                    <td>{{ $coupon->discount_percentage }}%</td>
-                    <td>R$ {{ number_format($coupon->min_amount, 2, ',', '.') }}</td>
+                    <td>{{ $coupon->discount }}%</td>
+                    <td>R$ {{ number_format($coupon->min_value, 2, ',', '.') }}</td>
                     <td>{{ \Carbon\Carbon::parse($coupon->expires_at)->format('d/m/Y') }}</td>
                     <td>
                         @if($coupon->status)
