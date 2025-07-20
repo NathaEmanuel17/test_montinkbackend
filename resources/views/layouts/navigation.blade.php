@@ -20,11 +20,18 @@
                         Dashboard
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.users') }}" class="nav-link {{ request()->routeIs('admin.users') ? 'active' : '' }}">
-                        Usuarios
-                    </a>
-                </li>
+                    @if(Auth::user()->role === 'admin')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.users') }}" class="nav-link {{ request()->routeIs('admin.users') ? 'active' : '' }}">
+                                Usuários
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('products.index') }}" class="nav-link {{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
+                                Produtos
+                            </a>
+                        </li>
+                    @endif
                 @endauth
             </ul>
 
