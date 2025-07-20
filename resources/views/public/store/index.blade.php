@@ -27,7 +27,11 @@
         @if (Route::has('login'))
             <nav class="d-flex gap-2">
                 @auth
-                    <a href="{{ route('orders.index') }}" class="btn btn-outline-dark">Meus pedidos</a>
+                    @if(auth()->user()->role === 'admin')
+                        <a href="{{ route('admin.sales.index') }}" class="btn btn-outline-dark">Vendas</a>
+                    @else
+                        <a href="{{ route('orders.index') }}" class="btn btn-outline-dark">Meus Pedidos</a>
+                    @endif
                 @else
                     <nav class="d-flex align-items-center gap-3">
                         <a href="{{ route('login') }}" class="fw-bold text-dark text-decoration-none d-flex align-items-center" style="font-size: 1.1rem;">
