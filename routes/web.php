@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
+use App\Http\Controllers\CouponController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,6 +14,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::post('/users/{user}/promote', [UserController::class, 'promote'])->name('users.promote');
+    Route::resource('coupons', CouponController::class)->only(['index', 'create', 'store', 'destroy']);
 });
 
 Route::get('/dashboard', function () {
@@ -27,7 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('products', ProductController::class);
     Route::delete('products/{product}/images/{image}', [ProductImageController::class, 'destroy'])
             ->name('products.images.destroy');
-
 });
 
 require __DIR__.'/auth.php';

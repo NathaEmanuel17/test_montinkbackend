@@ -15,12 +15,13 @@
             <!-- Links à esquerda -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @auth
-                <li class="nav-item">
-                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                        Dashboard
-                    </a>
-                </li>
+
                     @if(Auth::user()->role === 'admin')
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                                Dashboard
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.users') }}" class="nav-link {{ request()->routeIs('admin.users') ? 'active' : '' }}">
                                 Usuários
@@ -29,6 +30,11 @@
                         <li class="nav-item">
                             <a href="{{ route('products.index') }}" class="nav-link {{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
                                 Produtos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.coupons.index') }}" class="nav-link {{ request()->routeIs('coupons.*') ? 'active' : '' }}">
+                                Cupons
                             </a>
                         </li>
                     @endif
