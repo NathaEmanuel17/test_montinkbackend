@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "824b977c-3d9e-4d8c-8c3f-41070b19cbd4",
+		"name": "webhook_montink",
+		"description": "### ✅ **Status permitidos**\n\nEnvie um desses valores no campo `status`:\n\n- `pending`\n    \n- `paid`\n    \n- `shipped`\n    \n- `delivered`\n    \n- `canceled` ⚠️ (só se ainda **não estiver cancelado**)\n    \n\n### ✅ **Exemplo completo de requisição**\n\n**POST** `https://seudominio.com/api/webhook/orders/update-status`\n\n**Headers:**\n\nX-WEBHOOK-TOKEN: 2b1f4e82-9c7a-4707-bd68-fc13d4b132ac  \nContent-Type: application/json\n\nBody:\n\n{  \n\"order_id\": 456,  \n\"status\": \"paid\"  \n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28099145"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-WEBHOOK-TOKEN",
+						"value": "2b1f4e82-9c7a-4707-bd68-fc13d4b132ac",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"order_id\": 1, \"status\": \"canceled\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/webhook/order-status"
+			},
+			"response": []
+		}
+	]
+}
