@@ -61,8 +61,8 @@
 
         {{-- Ações --}}
         <div class="d-flex gap-2">
-            <a href="{{ route('products.edit', $product) }}" class="btn btn-warning">Editar</a>
-            <a href="{{ route('products.index') }}" class="btn btn-secondary">Voltar</a>
+            <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-warning">Editar</a>
+            <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Voltar</a>
         </div>
     </div>
 </x-app-layout>

@@ -126,7 +126,7 @@
 
         $('.delete-image-btn').on('click', function () {
             const imageId = $(this).data('image-id');
-            const url = `{{ url('products/' . $product->id . '/images') }}/${imageId}`;
+            const url = `{{ url('admin/products/' . $product->id . '/images') }}/${imageId}`;
             const token = $('meta[name="csrf-token"]').attr('content');
 
             Swal.fire({
