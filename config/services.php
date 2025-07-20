@@ -13,6 +13,9 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'webhook' => [
+        'token' => env('WEBHOOK_TOKEN'),
+    ],
 
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),

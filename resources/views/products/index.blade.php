@@ -16,7 +16,7 @@
         </form>
 
         <div class="mb-3">
-            <a href="{{ route('products.create') }}" class="btn btn-primary">Novo Produto</a>
+            <a href="{{ route('admin.products.create') }}" class="btn btn-primary">Novo Produto</a>
         </div>
 
         <table class="table table-bordered table-hover align-middle">
@@ -48,11 +48,11 @@
                     <td>{{ $product->name }}</td>
                     <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                     <td>
-                        <a href="{{ route('products.show', $product) }}" class="btn btn-sm btn-info">Ver</a>
-                        <a href="{{ route('products.edit', $product) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{{ route('admin.products.show', $product) }}" class="btn btn-sm btn-info">Ver</a>
+                        <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-sm btn-warning">Editar</a>
                         <button class="btn btn-sm btn-danger delete-btn" data-id="{{ $product->id }}">Excluir</button>
 
-                        <form id="delete-form-{{ $product->id }}" action="{{ route('products.destroy', $product) }}" method="POST" style="display: none;">
+                        <form id="delete-form-{{ $product->id }}" action="{{ route('admin.products.destroy', $product) }}" method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')
                         </form>

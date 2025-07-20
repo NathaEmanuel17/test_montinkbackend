@@ -45,9 +45,11 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * Um usuário pode ter muitos produtos.
-     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);

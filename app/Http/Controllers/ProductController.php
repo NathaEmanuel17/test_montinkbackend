@@ -48,7 +48,7 @@ class ProductController extends Controller
 
             $this->handleProductImagesUpload($request, $product);
 
-            return redirect()->route('products.index')->with('success', 'Produto cadastrado com sucesso.');
+            return redirect()->route('admin.products.index')->with('success', 'Produto cadastrado com sucesso.');
         } catch (\Exception $e) {
             Log::error('Erro ao cadastrar produto: ' . $e->getMessage());
             return back()->with('error', 'Erro ao cadastrar o produto.')->withInput();
@@ -99,7 +99,7 @@ class ProductController extends Controller
 
             $this->handleProductImagesUpload($request, $product);
 
-            return redirect()->route('products.index')->with('success', 'Produto atualizado com sucesso.');
+            return redirect()->route('admin.products.index')->with('success', 'Produto atualizado com sucesso.');
         } catch (\Exception $e) {
             Log::error('Erro ao atualizar produto: ' . $e->getMessage());
             return back()->with('error', 'Erro ao atualizar o produto.')->withInput();

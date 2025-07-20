@@ -1,7 +1,13 @@
 <x-app-layout>
 
 <div class="container mt-5" style="max-width: 500px;">
-        <h2 class="mb-4">Criar conta</h2>
+    @if(session('message'))
+        <div class="alert alert-warning text-center">
+            {{ session('message') }}
+        </div>
+    @endif
+
+    <h2 class="mb-4">Criar conta</h2>
 
         <form method="POST" action="{{ route('register') }}">
             @csrf

@@ -10,7 +10,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form method="POST" action="{{ route('products.update', $product) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin.products.update', $product) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -98,7 +98,7 @@
 
             <div class="mt-4">
                 <button type="submit" class="btn btn-primary">Atualizar</button>
-                <a href="{{ route('products.index') }}" class="btn btn-secondary">Voltar</a>
+                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Voltar</a>
             </div>
         </form>
 

@@ -15,11 +15,14 @@
         @if (Route::has('login'))
             <nav class="d-flex gap-2">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="btn btn-outline-dark">Dashboard</a>
+                    <a href="{{ route('admin.sales.index') }}" class="btn btn-outline-dark">Vendas</a>
                 @else
                     <header class="d-flex justify-content-end mb-4">
                         @if (Route::has('login'))
                             <nav class="d-flex align-items-center gap-3">
+                                <a href="{{ route('public.products.index') }}" class="btn btn-outline-warning">
+                                    Ver Loja
+                                </a>
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="btn btn-outline-dark">Dashboard</a>
                                 @else
