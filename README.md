@@ -32,7 +32,7 @@ Este é um projeto de e-commerce completo desenvolvido em **Laravel 12**, com fu
 
 ```bash
 # 1. Clonar o repositório
-git clone https://github.com/seu-usuario/loja-virtual.git
+git clone https://github.com/NathaEmanuel17/test_montinkbackend.git
 cd loja-virtual
 
 # 2. Instalar as dependências do PHP
