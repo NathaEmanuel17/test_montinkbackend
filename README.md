@@ -67,7 +67,7 @@ php artisan db:seed
 php artisan serve
 
 # VIDEO DEMONSTRAÇÃO SISTEMA
-#VIDEO COMPLETO SEM ERROS: https://drive.google.com/file/d/1JZvBbFdyRSYcLfy1KLgxvrCBRgsS5Yny/view?usp=sharing
-1ºvideo(Ele trava na demonstração do projeto):https://drive.google.com/file/d/1v8ct-NBbNxSVJj1JI35MCSJUJyOFem6d/view?usp=sharing
-2ºvideo(Demonstração basica das funcionalidades existentes):https://drive.google.com/file/d/1B-eKn8rMqEPY-9lz-SEZNeMIqsZtba1j/view?usp=sharing
+1ºVIDEO COMPLETO SEM ERROS: https://drive.google.com/file/d/1JZvBbFdyRSYcLfy1KLgxvrCBRgsS5Yny/view?usp=sharing
+#2ºvideo(Ele trava na demonstração do projeto):https://drive.google.com/file/d/1v8ct-NBbNxSVJj1JI35MCSJUJyOFem6d/view?usp=sharing
+#3ºvideo(Demonstração basica das funcionalidades existentes):https://drive.google.com/file/d/1B-eKn8rMqEPY-9lz-SEZNeMIqsZtba1j/view?usp=sharing
 #10 A Colletion do webhook está nos arquivos do projeto
